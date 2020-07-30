@@ -135,18 +135,31 @@ class CardMovimentacoesItem extends StatelessWidget {
             ),
           ),
           Padding(
-            padding:  EdgeInsets.only(left: width * 0.03),
-            child: Container(
-              width: width * 0.4,
-              child: Text(mov.descricao,overflow: TextOverflow.ellipsis, textAlign: TextAlign.start, style: TextStyle(
-              color:mov.tipo == "r" ? Colors.green[700]:Colors.red[700],
-              fontWeight: FontWeight.bold,
-              fontSize: width * 0.044,            
-            ),),
-            )
-          ),
-            ],
-          ),
+            padding: EdgeInsets.only(left: width * 0.03),
+              child: Container(
+                width: width * 0.4,
+                  child: Column(
+                    children: <Widget>[
+                      Text(""), //Gambiarra, desculpa.
+                      Text(
+                        mov.descricao,overflow: TextOverflow.ellipsis,textAlign: TextAlign.center,style: TextStyle(
+                          color: mov.tipo == "r" ? Colors.black : Colors.black,
+                          fontWeight: FontWeight.normal,
+                          fontSize: width * 0.034,
+                        ),
+                      ),
+                      Text(
+                        mov.data,overflow: TextOverflow.ellipsis,textAlign: TextAlign.left,style: TextStyle(
+                          color: mov.tipo == "r" ? Colors.black : Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: width * 0.02,
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
+                ],
+                ),
           Text(mov.tipo == "r" ? "+ ${mov.valor}" :" ${mov.valor}", style: TextStyle(
             color: mov.tipo == "r" ? Colors.green[700] : Colors.red[700],
             fontWeight: FontWeight.bold,
@@ -157,7 +170,7 @@ class CardMovimentacoesItem extends StatelessWidget {
       ),
     ),
     ),
-    lastItem ==true ? Container(height:80,) : Container()
+    
       ],
     );
     
